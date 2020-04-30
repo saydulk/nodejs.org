@@ -8,7 +8,9 @@
     "serve": "node build.js serve",
     "load-versions": "node scripts/load-versions.js",
     "start": "npm run serve",
-    "test": "standard build.js scripts/*.js scripts/**/*.js tests/**/*.js && tape tests/**/*.test.js | faucet"
+    "test": "standard build.js scripts/*.js scripts/**/*.js tests/**/*.js && tape tests/**/*.test.js | faucet",
+    "snyk-protect": "snyk protect",
+    "prepublish": "npm run snyk-protect"
   },
   "repository": {
     "type": "git",
@@ -49,7 +51,8 @@
     "require-dir": "0.3.0",
     "semver": "5.0.3",
     "st": "1.0.0",
-    "strftime": "0.9.2"
+    "strftime": "0.9.2",
+    "snyk": "^1.316.1"
   },
   "devDependencies": {
     "faucet": "^0.0.1",
@@ -58,5 +61,6 @@
     "proxyquire": "^1.7.3",
     "standard": "^5.3.1",
     "tape": "^4.2.2"
-  }
+  },
+  "snyk": true
 }
